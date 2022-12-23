@@ -26,7 +26,8 @@
     "server": "nodemon server.js",
     "client": "cd client && npm start",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start-server": "nodemon server.js"
   },
   "eslintConfig": {
     "extends": [
