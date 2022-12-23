@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
 const Modal = ({
-  showModal,
   setShowModal,
   languages,
   chosenLanguage,

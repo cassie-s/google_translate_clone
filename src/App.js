@@ -15,7 +15,7 @@ const App = () => {
 
 
   const getLanguages = async () => {
-    const response = await axios.get('http://localhost:8000/languages')
+    const response = await axios.get('http://localhost:8001/languages')
     setLanguages(response.data)
   }
   useEffect(() => {
@@ -27,7 +27,7 @@ const App = () => {
     const data = {
       textToTranslate, outputLanguage, inputLanguage
     }
-    const response = await axios.get('http://localhost:8000/translation', {
+    const response = await axios.get('http://localhost:8001/translation', {
       params : data
     })
     console.log('response', response)
