@@ -63,7 +63,7 @@ app.get('/translation', async (req, res) => {
 })
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'googel_translate_clone/client/build', 'index.html'));
+  res.sendFile(path.resolve(__dirname, 'google_translate_clone/client/build', 'index.html'));
 });
 
 
