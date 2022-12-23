@@ -8,7 +8,7 @@ const path = require('path')
 
 app.use(cors())
 
-app.use(express.static(path.resolve(__dirname, './client/build')));
+app.use(express.static(path.resolve(__dirname, 'build')));
 
 app.get('/languages', async (req, res) => {
   const options = {
@@ -63,7 +63,7 @@ app.get('/translation', async (req, res) => {
 })
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
+  res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
 });
 
 
