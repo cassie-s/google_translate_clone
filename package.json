@@ -27,7 +27,7 @@
     "client": "cd client && npm start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start-server": "nodemon server.js"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "eslintConfig": {
     "extends": [
