@@ -26,7 +26,7 @@
     "start:frontend": "react-scripts start",
     "start:backend": "nodemon server.js",
     "build": "react-scripts build",
-    "post-install": "npm install"
+    "postinstall": "npm install"
   },
   "eslintConfig": {
     "extends": [
