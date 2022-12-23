@@ -23,6 +23,7 @@
     "node": "14.18.0"
   },
   "scripts": {
+    "start": "concurrently --kill-others-on-fail \"npm run start:frontend\" \"npm run start:backend\"",
     "start:frontend": "react-scripts start",
     "start:backend": "nodemon server.js",
     "build": "react-scripts build",
