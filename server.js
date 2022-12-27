@@ -24,6 +24,7 @@ app.get('/languages', async (req, res) => {
       'https://g-translate1.p.rapidapi.com/languages',
       options
     )
+    /* Change languages object into an array (mapping key/value pairs) */
     const arrayOfData = Object.keys(response.data.data).map(
       (key) => response.data.data[key]
     )

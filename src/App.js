@@ -9,11 +9,11 @@ const App = () => {
   const [showModal, setShowModal] = useState(false)
   const [languages, setLanguages] = useState(null)
   const [inputLanguage, setInputLanguage] = useState('English')
-  const [outputLanguage, setOutputLanguage] = useState('Polish')
+  const [outputLanguage, setOutputLanguage] = useState('Spanish')
   const [textToTranslate, setTextToTranslate] = useState('')
   const [translatedText, setTranslatedText] = useState('')
 
-
+/* Get languages from API and assign empty array in useEffect so it only runs once */
   const getLanguages = async () => {
     const response = await axios.get('http://localhost:8001/languages')
     setLanguages(response.data)
@@ -34,6 +34,8 @@ const App = () => {
     setTranslatedText(response.data)
   }
 
+  /* when clicking the arrows, input and outlook languages swap */
+
   const handleClick = () => {
     setInputLanguage(outputLanguage)
     setOutputLanguage(inputLanguage)
@@ -41,6 +43,9 @@ const App = () => {
 
   return (
     <div className="app">
+
+      {/* if showModal is null, show the two text boxes */}
+
       {!showModal && (
         <>
           <TextBox
@@ -65,6 +70,9 @@ const App = () => {
           </div>
         </>
       )}
+
+      {/* else show the Modal */}
+
       {showModal && (
         <Modal
           showModal={showModal}

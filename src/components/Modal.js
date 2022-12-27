@@ -6,25 +6,32 @@ const Modal = ({
   chosenLanguage,
   setChosenLanguage,
 }) => {
+
+  /* defining searched languages separately to reduce number of calls to api. Set it to an empty string if searching */
   const [searchedLanguage, setSearchedLanguage] = useState('')
 
   const filteredLanguages = languages.filter((language) =>
     language.toLowerCase().startsWith(searchedLanguage.toLowerCase())
   )
 
+  /* Set chosen language to what was clicked. Close the modal since we have chosen a langauge */
   const handleClick = (e) => {
     setChosenLanguage(e.target.textContent)
     setShowModal(false)
   }
 
+
+  /* set the searched language to the event target value */
   const handleChange = (e) => {
     setSearchedLanguage(e.target.value)
     setChosenLanguage(e.target.value)
   }
+
   return (
     <div className="option-list">
       <div className="search-bar">
         <input value={chosenLanguage} onChange={handleChange} />
+        {/* when clicking the close button, close the modal */}
         <div className="close-button" onClick={() => setShowModal(null)}>
           <svg
             focusable="false"
@@ -37,6 +44,7 @@ const Modal = ({
       </div>
       <div className="option-container">
         <ul>
+          {/*If filtered language exists, map it and get the index*/}
           {filteredLanguages?.map((filteredLanguage, _index) => (
             <div className="list-item">
               <div className="icon">

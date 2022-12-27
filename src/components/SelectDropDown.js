@@ -1,4 +1,5 @@
 const SelectDropDown = ({ style, setShowModal, selectedLanguage }) => {
+  {/* when clicking the drop-down, the modal opens with a specific style */}
   return (
     <div onClick={() => setShowModal(style)} className="select-drop-down">
       <input value={selectedLanguage} />
