@@ -7,7 +7,6 @@
   ## Installation
   To run in development, install dependencies, and get API keys from (insert link). Remember to put API keys in an env file.
 
-
   ## Usage
   See deployed version here: (https://google-translate-clone22.herokuapp.com/)
   ![Screenshot of Application](screenshot.png)
@@ -15,9 +14,6 @@
   ## License
     
   This project uses  the [MIT](https://opensource.org/licenses/MIT) license.
-
-  ## Credits
-  This was created following a tutorial by kubowania: (https://youtu.be/aFISwq3wteY)
 
   ## Questions
   Reach out via email or GitHub.  
