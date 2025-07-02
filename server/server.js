@@ -61,10 +61,11 @@ app.get('/translation', async (req, res) => {
 });
 
 app.use(cors());
-app.use(express.static(path.resolve(__dirname, 'build')));
+const clientBuildPath = path.resolve(__dirname, '../client/build');
 
+app.use(express.static(clientBuildPath));
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+  res.sendFile(path.resolve(clientBuildPath, 'index.html'));
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
