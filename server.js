@@ -7,8 +7,6 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 8001;
 
-app.use(cors());
-app.use(express.static(path.resolve(__dirname, 'build')));
 
 app.get('/languages', async (req, res) => {
   const options = {
@@ -18,7 +16,7 @@ app.get('/languages', async (req, res) => {
       'x-rapidapi-key': process.env.RAPID_API_KEY,
     },
   };
-
+  
   try {
     const response = await axios(
       'https://g-translate1.p.rapidapi.com/languages',
@@ -36,7 +34,7 @@ app.get('/languages', async (req, res) => {
 
 app.get('/translation', async (req, res) => {
   const { textToTranslate, outputLanguage, inputLanguage } = req.query;
-
+  
   const options = {
     method: 'GET',
     params: {
@@ -49,7 +47,7 @@ app.get('/translation', async (req, res) => {
       'x-rapidapi-key': process.env.RAPID_API_KEY,
     },
   };
-
+  
   try {
     const response = await axios(
       'https://g-translate1.p.rapidapi.com/translate',
@@ -61,6 +59,9 @@ app.get('/translation', async (req, res) => {
     res.status(500).json({ message: 'Translation failed' });
   }
 });
+
+app.use(cors());
+app.use(express.static(path.resolve(__dirname, 'build')));
 
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
