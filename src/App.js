@@ -7,32 +7,36 @@ import axios from 'axios'
 
 const App = () => {
   const [showModal, setShowModal] = useState(false)
-  const [languages, setLanguages] = useState(null)
+  const [languages, setLanguages] = useState([])
   const [inputLanguage, setInputLanguage] = useState('English')
   const [outputLanguage, setOutputLanguage] = useState('Spanish')
   const [textToTranslate, setTextToTranslate] = useState('')
   const [translatedText, setTranslatedText] = useState('')
 
 /* Get languages from API and assign empty array in useEffect so it only runs once */
-  const getLanguages = async () => {
-    const response = await axios.get('http://localhost:8001/languages')
+const getLanguages = async () => {
+  try {
+    const response = await axios.get('/languages')
     setLanguages(response.data)
+  } catch (err) {
+    console.error('Error fetching languages:', err)
+    setLanguages([]) // prevent crashes in Modal
   }
-  useEffect(() => {
-    getLanguages()
-  }, [])
+}
 
-  const translate = async () => {
-    console.log('translate')
+const translate = async () => {
+  try {
     const data = {
       textToTranslate, outputLanguage, inputLanguage
     }
-    const response = await axios.get('http://localhost:8001/translation', {
+    const response = await axios.get('/translation', {
       params : data
     })
-    console.log('response', response)
     setTranslatedText(response.data)
+  } catch (err) {
+    console.error('Error translating:', err)
   }
+}
 
   /* when clicking the arrows, input and outlook languages swap */
 

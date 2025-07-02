@@ -1,5 +1,5 @@
 const Button = () => {
-  return <div>➟</div>
+  return <div className="submit">➟</div>
 }
 
 export default Button
