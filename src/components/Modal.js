@@ -10,7 +10,7 @@ const Modal = ({
   /* defining searched languages separately to reduce number of calls to api. Set it to an empty string if searching */
   const [searchedLanguage, setSearchedLanguage] = useState('')
 
-  const filteredLanguages = languages.filter((language) =>
+  const filteredLanguages = (languages || []).filter((language) =>
     language.toLowerCase().startsWith(searchedLanguage.toLowerCase())
   )
 
