@@ -150,6 +150,12 @@ input {
   width: 26px;
   height: 26px;
   fill: #8ab4f8;
+  cursor: pointer;
+}
+
+.input textarea {
+  padding-right: 60px;
+  position: relative;
 }
 
 .input .delete {
@@ -158,4 +164,13 @@ input {
   top: -156px;
   font-size: 50px;
   color:#bdc1c6;
+}
+
+.delete {
+  cursor: pointer;
+  max-width: fit-content;
+}
+
+.submit {
+  cursor: pointer;
 }
