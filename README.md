@@ -5,10 +5,10 @@
   This app is a simple clone of Google translate. You can translate to or from around 200 languages.
 
   ## Installation
-  To run in development, install dependencies, and get API keys from (insert link). Remember to put API keys in an env file.
+  To run in development, install dependencies, and get an API key from [Rapid API](https://rapidapi.com/datascraper/api/g-translate1). Remember to put API keys in an env file.
 
   ## Usage
-  See deployed version here: (https://google-translate-clone22.herokuapp.com/)
+  See deployed version [here](https://google-translate-clone-jv2n.onrender.com).
   ![Screenshot of Application](screenshot.png)
 
   ## License
