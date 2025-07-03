@@ -9,6 +9,7 @@
 
   ## Usage
   See deployed version [here](https://google-translate-clone-jv2n.onrender.com).
+  
   ![Screenshot of Application](screenshot.png)
 
   ## License
