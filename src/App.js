@@ -15,14 +15,12 @@ const App = () => {
 
 /* Get languages from API and assign empty array in useEffect so it only runs once */
 const getLanguages = async () => {
-  try {
     const response = await axios.get('/languages')
     setLanguages(response.data)
-  } catch (err) {
-    console.error('Error fetching languages:', err)
-    setLanguages([]) // prevent crashes in Modal
   }
-}
+  useEffect(() => {
+    getLanguages()
+  }, [])
 
 const translate = async () => {
   try {
@@ -41,6 +39,7 @@ const translate = async () => {
   /* when clicking the arrows, input and outlook languages swap */
 
   const handleClick = () => {
+    console.log("click")
     setInputLanguage(outputLanguage)
     setOutputLanguage(inputLanguage)
   }
