@@ -2,7 +2,7 @@ const SelectDropDown = ({ style, setShowModal, selectedLanguage }) => {
   {/* when clicking the drop-down, the modal opens with a specific style */}
   return (
     <div onClick={() => setShowModal(style)} className="select-drop-down">
-      <input defaultValue={selectedLanguage} />
+      <input value={selectedLanguage} readOnly />
       <div className="down-arrow">
         <svg
           focusable="false"
