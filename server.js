@@ -61,7 +61,7 @@ app.get('/translation', async (req, res) => {
 });
 
 app.use(cors());
-const clientBuildPath = path.resolve(__dirname, '../client/build');
+const clientBuildPath = path.resolve(__dirname, 'build');
 
 app.use(express.static(clientBuildPath));
 app.get('*', (req, res) => {

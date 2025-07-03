@@ -51,6 +51,7 @@ textarea {
   width: 26px;
   height: 26px;
   fill: #5a5a5d;
+  cursor: pointer;
 }
 
 .option-list {
